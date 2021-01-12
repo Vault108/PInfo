@@ -5,7 +5,13 @@ First we need to install the requirements.
 We can do that by running:
 
      pip install -r requirements.txt
+     
+You will need an API key from IPInfo.io 
 
+Get one [Here](https://ipinfo.io/signup)
+
+Set the first line in `keys.txt` to your API key    
+     
 You can now run the program by using:
      
      python3 PInfo.py
