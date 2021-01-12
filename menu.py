@@ -36,7 +36,9 @@ def dinfo():  # Defines the dns command
 
 def ipi():  # Defines ip info command
     console = Console()
-    access_token = "Your_Key"  # ipinfo.io key
+    keys_file = open("keys.txt")
+    read = keys_file.readlines()
+    access_token = read[0].rstrip()
     handler = ipinfo.getHandler(access_token)
     ip_address = console.input("[bold blue]Enter an IP: [/bold blue]")
     details = handler.getDetails(ip_address)
