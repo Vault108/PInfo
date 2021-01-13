@@ -80,7 +80,6 @@ def main():
         if Version == mine: print("You have the latest version")
         if Version > mine: print("Version", mine + " is outdated. Version " + Version + " was released " + rdate )
         if Version < mine: print("Do you have a time machine?")
-#        print("Welcome")
         print("\nChoose service you want to use : ")
         print(
             """
