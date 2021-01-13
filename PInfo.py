@@ -1,6 +1,7 @@
 import subprocess
 import ipinfo
 import dns.resolver
+import requests
 import rich
 from rich.panel import Panel
 from rich.console import Console
@@ -70,8 +71,16 @@ def ipi():  # Defines ip info command
 
 
 def main():
+
+
     while True:
-        print("Welcome")
+        mine = '0.2.0'
+        Version = requests.get('https://vault108.github.io/PInfo/about.json').json()["Version"]
+        rdate = requests.get('https://vault108.github.io/PInfo/about.json').json()["Date"]
+        if Version == '0.2.0': print("You have the latest version")
+        if Version > '0.2.0': print("Version", mine + " is outdated. Version " + Version + " was released " + rdate )
+        if Version < '0.2.0': print("Do you have a time machine?")
+#        print("Welcome")
         print("\nChoose service you want to use : ")
         print(
             """
