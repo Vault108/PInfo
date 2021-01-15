@@ -7,7 +7,7 @@ from rich.panel import Panel
 from rich.console import Console
 from rich import print
 from rich.console import render_group
-mine = '0.3.0'
+mine = '0.4.0'
 
 
 def hinfo():
