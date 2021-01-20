@@ -46,8 +46,6 @@ def ipi():  # Defines ip info command
     city = details.city
     region = details.region
     country = details.country_name
-    ping = subprocess.check_output("ping -c 4 " + ip_address + "| tail -n 1", shell=True)
-    ping_out = ping.decode()
     try:
         hn = details.hostname
         org = details.org
@@ -58,7 +56,7 @@ def ipi():  # Defines ip info command
     Console().print("[red3] Location :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", city + "," + region + country )
     Console().print("[red3] Hostname :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", hn )
     Console().print("[red3] Organization :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", org)
-    Console().print("[red3] Ping :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", ping_out, )
+    Console().print("[red3] Ping :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ")
 
 def main():
 
