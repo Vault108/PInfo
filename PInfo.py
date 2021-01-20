@@ -1,4 +1,3 @@
-import subprocess
 import ipinfo
 import dns.resolver
 import requests
