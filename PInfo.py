@@ -2,10 +2,8 @@ import ipinfo
 import dns.resolver
 import requests
 import rich
-from rich.panel import Panel
 from rich.console import Console
 from rich import print
-from rich.console import render_group
 mine = '0.4.0'
 
 
