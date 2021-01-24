@@ -16,7 +16,7 @@ def dinfo():  # Defines the dns command
         "[blue]Enter a Domain[/blue] :warning:[bold red1](Do not use WWW)[/bold red1]:warning: [blue]"
     )
     for a in dns.resolver.resolve(url, "a"):
-       Console().print(
+        Console().print(
             "[red3]  A Record :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/]",
             a,
         )
@@ -26,7 +26,7 @@ def dinfo():  # Defines the dns command
             mx,
         )
     for ns in dns.resolver.resolve(url, "ns"):
-       Console().print(
+        Console().print(
             "[red3] NS Record :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/]",
             ns,
         )
@@ -50,30 +50,52 @@ def ipi():  # Defines ip info command
         hn = "No Hostname found for requested IP "
         org = "No Organization found for requested IP"
     Console().print("[red3] INFO FOR [/red3]", ip)
-    Console().print("[red3] Location :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", city + "," + region + country )
-    Console().print("[red3] Hostname :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", hn )
-    Console().print("[red3] Organization :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ", org)
-    Console().print("[red3] Ping :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ")
+    Console().print(
+        "[red3] Location :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ",
+        city +
+        "," +
+        region +
+        country)
+    Console().print(
+        "[red3] Hostname :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ",
+        hn)
+    Console().print(
+        "[red3] Organization :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ",
+        org)
+    Console().print(
+        "[red3] Ping :arrow_forward:  :arrow_forward:  :arrow_forward:  :arrow_forward: [/red3] ")
+
 
 def main():
 
-
     while True:
-        Version = requests.get('https://vault108.github.io/PInfo/about.json').json()["Version"]
-        rdate = requests.get('https://vault108.github.io/PInfo/about.json').json()["Date"]
-        if Version == mine: Console().print("[cyan1] \n  You have the latest version [/cyan1]")
-        if Version > mine: print("Version", mine + " is outdated. Version " + Version + " was released " + rdate )
-        if Version < mine: print("Do you have a time machine?")
+        Version = requests.get(
+            'https://vault108.github.io/PInfo/about.json').json()["Version"]
+        rdate = requests.get(
+            'https://vault108.github.io/PInfo/about.json').json()["Date"]
+        if Version == mine:
+            Console().print("[cyan1] \n  You have the latest version [/cyan1]")
+        if Version > mine:
+            print(
+                "Version",
+                mine +
+                " is outdated. Version " +
+                Version +
+                " was released " +
+                rdate)
+        if Version < mine:
+            print("Do you have a time machine?")
         print("\n[royal_blue1]Choose service you want to use : [/royal_blue1] ")
         print("[royal_blue1]"
-            """
+              """
         1 : Check an IP
         2 : Check a URL
         3 : Check DNS
         0 : Exit"""
-	"[/royal_blue1]"
-        )
-        choice = Console().input("\n[royal_blue1]Enter your choice : [/royal_blue1]")
+              "[/royal_blue1]"
+              )
+        choice = Console().input(
+            "\n[royal_blue1]Enter your choice : [/royal_blue1]")
 
         if choice == "1":
             ipi()
