@@ -15,5 +15,5 @@ Pygments==2.7.3
 requests==2.25.1
 rich==9.7.0
 typing-extensions==3.7.4.3
-urllib3==1.26.3
+urllib3==1.26.4
 yarl==1.6.3
